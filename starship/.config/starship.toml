@@ -1,0 +1,83 @@
+
+format = '''$all$fill $hostname $os [|](blue bold) $shell
+$container$character'''
+
+[line_break]
+disabled = true
+
+[fill]
+symbol = ' '
+
+[hostname]
+ssh_only = false
+format = '$ssh_symbol$hostname($style)'
+disabled = false
+style = 'purple bold'
+
+[shell]
+format = '[$indicator]($style)'
+fish_indicator = '  fish'
+bash_indicator = '  bash'
+unknown_indicator = '  dash'
+
+style = 'yellow bold'
+disabled = false
+
+[character]
+success_symbol = '󰞷($style)'
+
+[os]
+disabled = false
+format = "$symbol($style)"
+symbols.Fedora = "󰣛"
+symbols.Ubuntu = ""
+symbols.Arch = "󰣇"
+symbols.Debian = ""
+symbols.Alpine = ""
+
+[docker_context]
+symbol = " "
+format = "via [$symbol$context]($style) "
+style = "blue bold"
+only_with_files = true
+detect_files = ["*.compose.yaml", "compose.yaml", "docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+disabled = false
+
+# Before all the version info (python, nodejs, php, etc.)
+[git_status]
+style = "white"
+ahead = "⇡${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+behind = "⇣${count}"
+deleted = "x"
+
+# Last param in the first line/row
+[cmd_duration]
+min_time = 1
+format = "took [$duration]($style)"
+disabled = false
+
+[python]
+symbol = ' '
+pyenv_version_name = true
+style = "blue"
+detect_extensions = []
+
+[git_branch]
+symbol = ' '
+style = "red"
+
+
+[directory.substitutions]
+"~/Documents" = "󰈙 "
+"~/Downloads" = "󱑢 "
+"~/Music" = "󰎄 "
+"~/Pictures" = "󰄀 "
+"~/VM" = "  "
+"~/Pihole"= "󰷱 "
+"~/Playground" = " "
+
+[container]
+symbol = "󰮄 "
+format = '[$symbol]($style)'
+
