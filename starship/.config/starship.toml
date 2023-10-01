@@ -1,5 +1,5 @@
 
-format = '''$all$fill $hostname $os [|](blue bold) $shell
+format = '''$all$fill$os $hostname [|](blue bold) $shell [|](blue bold) $time
 $container$character'''
 
 [line_break]
@@ -7,6 +7,14 @@ disabled = true
 
 [fill]
 symbol = ' '
+
+
+[time]
+disabled = false
+use_12hr = true
+style = "red bold"
+format = '[$time]($style)'
+time_format = '%T'
 
 [hostname]
 ssh_only = false
@@ -16,9 +24,8 @@ style = 'purple bold'
 
 [shell]
 format = '[$indicator]($style)'
-fish_indicator = '  fish'
-bash_indicator = '  bash'
-unknown_indicator = '  dash'
+fish_indicator = 'fish'
+bash_indicator = 'bash'
 
 style = 'yellow bold'
 disabled = false
