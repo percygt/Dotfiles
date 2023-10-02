@@ -24,10 +24,20 @@ if [ -d ~/.bashrc.d ]; then
 	done
 fi
 
-
 unset rc
+
+  #=============================#
+  # CONFIGS  			#
+  #=============================#
+
+#starship
 eval "$(starship init bash)"
 
+#aliases
+[ -f $HOME/.bashrc_aliases ] && source $HOME/.bashrc_aliases
+
+
+#nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -38,18 +48,12 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
-#distrobox
-alias fi="fish"
-alias f39="distrobox enter f39 -nw -- fish -l"
-alias f38="distrobox enter f38 -nw -- fish -l"
-alias u23="distrobox enter u23 -nw -- fish -l"
-
-alias ls="exa -la"
-
+#script
 export PATH="${PATH}:${HOME}/.local/bin/"
 
-alias rmc='git rm --cached */__pycache__/*'
 
+#cargo
 . "$HOME/.cargo/env"
 
+#kvm
 export LIBVIRT_DEFAULT_URI="qemu:///system"
