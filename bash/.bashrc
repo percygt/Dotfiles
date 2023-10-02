@@ -36,21 +36,18 @@ eval "$(starship init bash)"
 #aliases
 [ -f $HOME/.bashrc_aliases ] && source $HOME/.bashrc_aliases
 
-
 #nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 #pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
-#script
+#scripts
 export PATH="${PATH}:${HOME}/.local/bin/"
-
 
 #cargo
 . "$HOME/.cargo/env"
