@@ -21,3 +21,4 @@ alias rmc='git rm --cached */__pycache__/*'
 alias st='speedtest-cli --secure'
 alias ubun='distrobox enter ubuntu-distrobox -nw -- fish -l'
 
+alias neof='neofetch'
