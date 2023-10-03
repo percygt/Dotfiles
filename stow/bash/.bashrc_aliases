@@ -1,0 +1,23 @@
+#!/bin/bash
+
+alias arch='distrobox enter arch-distrobox -nw -- fish -l'
+alias cptheme='sudo cp ~/.themes/Marble-crispblue-dark/gnome-shell/gnome-shell.css /usr/share/themes/Marble-crispblue-dark/gnome-shell'
+alias dci='distrobox create -i'
+alias dcm='docker compose'
+alias debi='distrobox enter debian-distrobox -nw -- fish -l'
+alias ds=distrobox
+alias dt='docker logs --tail 1000 -f'
+alias edt='flatpak run org.gnome.TextEditor'
+alias fedo='distrobox enter fedora-distrobox -nw -- fish -l'
+alias flatdel='flatpak uninstall --delete-data'
+alias la='exa --icons -F -H --group-directories-first --git -1 -a'
+alias ll='ls -alF'
+alias ls='exa --icons -F -H --group-directories-first --git -1'
+alias pjp='protonvpn-cli c --cc JP'
+alias pko='protonvpn-cli killswitch --off'
+alias pus='protonvpn-cli c --cc US'
+alias rm-pycache='find . -type d -name  "__pycache__" -exec rm -r {} +'
+alias rmc='git rm --cached */__pycache__/*'
+alias st='speedtest-cli --secure'
+alias ubun='distrobox enter ubuntu-distrobox -nw -- fish -l'
+
