@@ -55,7 +55,9 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 #kvm
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
-
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
+#fish
+if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ${BASH_EXECUTION_STRING} ]]
+then
+	shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+	exec fish $LOGIN_OPTION
 fi
