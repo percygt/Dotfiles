@@ -54,3 +54,8 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 
 #kvm
 export LIBVIRT_DEFAULT_URI="qemu:///system"
+
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
