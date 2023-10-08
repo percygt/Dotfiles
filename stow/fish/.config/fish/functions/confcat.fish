@@ -1,7 +1,7 @@
-function funcadd --description "Add and save aliases"
-	set cf (status function)
+    function confcat --description 'Append one line config in .bashrc and config.fish'
+        set cf (status function)
         set -l options 'h/help'
-        argparse -n funcadd $options -- $argv
+        argparse -n funcdel $options -- $argv
         or return
 
         # should create a manpage
@@ -16,9 +16,9 @@ function funcadd --description "Add and save aliases"
         end
 
 	set -l retval 0
+	echo "argv[1]" >> config.fish
+        echo "argv[1]" >> .bashrc
 
-	alias $argv
-	funcsave $argv[1]
-	echo "alias $argv[1]='$argv[2]'" >> $HOME/.bashrc_aliases
-	
-end
+
+	return $retval
+    end
