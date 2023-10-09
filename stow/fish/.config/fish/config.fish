@@ -5,3 +5,4 @@ end
 
 pyenv init - | source
 
+neofetch
