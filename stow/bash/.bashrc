@@ -34,7 +34,7 @@ unset rc
 eval "$(starship init bash)"
 
 #aliases
-[ -f $HOME/.bashrc_aliases ] && source $HOME/.bashrc_aliases
+[ -f $HOME/.bash_aliases ] && source $HOME/.bash_aliases
 
 #nvm
 export NVM_DIR="$HOME/.nvm"

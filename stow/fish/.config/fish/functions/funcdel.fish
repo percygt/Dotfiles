@@ -1,4 +1,7 @@
     function funcdel --description 'Deletes a fish function both permanently and from memory'
+        #deletes bash alias
+        sed '|\"alias "$argv[1]"\"|d' ~/.bash_aliases 
+  
         set cf (status function)
         set -l options 'h/help'
         argparse -n funcdel $options -- $argv
