@@ -1,5 +1,5 @@
 
-format = '''$all$fill$os $hostname [|](blue bold) $shell [|](blue bold) $time
+format = '''$all$fill$os $hostname [|](blue bold) $shell [|](blue bold) $time 
 $container$character'''
 
 [line_break]
@@ -20,7 +20,7 @@ time_format = '%T'
 ssh_only = false
 format = '$ssh_symbol$hostname($style)'
 disabled = false
-style = 'purple bold'
+style = 'blue bold'
 
 [shell]
 format = '[$indicator]($style)'
