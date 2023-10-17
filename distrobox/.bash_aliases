@@ -1,0 +1,16 @@
+#!/bin/bash
+
+alias ls2='ls -TL=2'
+alias ls3='ls -TL=3'
+alias lsa='ls -T'
+alias ll='ls -l'
+alias lla='ls -lT'
+alias ll2='ls -lTL=2'
+alias ll3='ls -lTL=3'
+alias la='ls -la'
+alias la2='ls -laTL=2'
+alias la3='ls -laTL=3'
+alias nano='micro'
+alias ls='exa --icons -F -H --group-directories-first -1'
+alias neofetch='fastfetch'
+alias cat='bat'
