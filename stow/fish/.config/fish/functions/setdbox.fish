@@ -11,11 +11,7 @@ function setdbox --description 'stowd <distrobox-name>'
     end
     not test -n "$aliases"; and echo -e "\n#aliases\n[ -f $DBOX_DIR/$argv[1]/.bash_aliases ] && source $DBOX_DIR/$argv[1]/.bash_aliases" >> $DBOX_DIR/$argv[1]/.bashrc;
     not test -n "$user_configs"; and echo -e "\n#user_configs\n[ -f $DBOX_DIR/$argv[1]/.bash_configs ] && source $DBOX_DIR/$argv[1]/.bash_configs" >> $DBOX_DIR/$argv[1]/.bashrc
-    if test -n "$aliases" -a test -n "$user_configs"
-        echo "You're good to go"
-    else
-        echo "Something went wrong;
-    end
+
     cp -r $HOME/Dotfiles/distrobox/fastfetch/  $DBOX_DIR/$argv[1]/.config/
     cp -r $HOME/Dotfiles/distrobox/starship.toml  $DBOX_DIR/$argv[1]/.config/
     cp -r $HOME/Dotfiles/distrobox/.bash_aliases  $DBOX_DIR/$argv[1]/
