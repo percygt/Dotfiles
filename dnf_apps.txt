@@ -1,0 +1,12 @@
+gnome-tweaks
+tilix
+code
+gparted
+godot
+foot
+micro
+fastfetch
+exa
+fish
+starship
+
