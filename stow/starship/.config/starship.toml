@@ -1,3 +1,4 @@
+command_timeout=600
 
 format = '''$all$fill$os $hostname [|](blue bold) $shell [|](blue bold) $time 
 $container$character'''
@@ -68,7 +69,7 @@ disabled = false
 symbol = ' '
 pyenv_version_name = true
 style = "blue"
-detect_extensions = []
+# detect_extensions = []
 
 [git_branch]
 symbol = ' '

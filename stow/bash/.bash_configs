@@ -13,4 +13,15 @@ then
 	exec fish $LOGIN_OPTION
 fi
 
-neofetch
+#force xcb for qt apps
+export QT_QPA_PLATFORM="xcb;wayland"
+#override theme for qt
+export QT_STYLE_OVERRIDE=kvantum
+
+#themes
+export GTK_THEME=Colloid-Dark-Nord
+export GTK_CURSOR=Colloid-dark-cursors
+export GTK_ICON=Win11
+
+
+
