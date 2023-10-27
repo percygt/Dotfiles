@@ -13,6 +13,9 @@ then
 	exec fish $LOGIN_OPTION
 fi
 
+#default editor
+export EDITOR=/usr/bin/micro
+
 #force xcb for qt apps
 export QT_QPA_PLATFORM="xcb;wayland"
 #override theme for qt

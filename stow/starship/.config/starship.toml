@@ -1,6 +1,6 @@
 command_timeout=600
 
-format = '''$all$fill$os $hostname [|](blue bold) $shell [|](blue bold) $time 
+format = '''$all $fill $os $hostname [|](blue bold) $shell [|](blue bold) $time
 $container$character'''
 
 [line_break]
@@ -10,12 +10,20 @@ disabled = true
 symbol = ' '
 
 
+[nix_shell]
+disabled = true
+impure_msg = '[impure shell](bold red)'
+pure_msg = '[pure shell](bold green)'
+unknown_msg = '[unknown shell](bold yellow)'
+format = 'via [☃️ $state( \($name\))](bold blue) '
+
+
 [time]
 disabled = false
 use_12hr = true
 style = "red bold"
 format = '[$time]($style)'
-time_format = '%T'
+time_format = '%I:%M:%S '
 
 [hostname]
 ssh_only = false
@@ -27,12 +35,11 @@ style = 'blue bold'
 format = '[$indicator]($style)'
 fish_indicator = 'fish'
 bash_indicator = 'bash'
-
 style = 'yellow bold'
 disabled = false
 
 [character]
-success_symbol = '󰞷($style)'
+success_symbol = '>($style)'
 
 [os]
 disabled = false
