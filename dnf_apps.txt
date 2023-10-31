@@ -1,5 +1,4 @@
 gnome-tweaks
-tilix
 code
 gparted
 godot

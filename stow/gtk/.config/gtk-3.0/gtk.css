@@ -1,0 +1,8 @@
+VteTerminal,
+TerminalScreen,
+vte-terminal {
+  padding: 20px;
+  /* -vteterminal-inner-border: 0 10px; */
+}
+
+.ssd .titlebar { min-height: 46px; }
