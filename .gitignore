@@ -1,11 +1,4 @@
 .stfolder
-stow/gitconfig
-stow/brave/
-stow/private
-stow/firefox
-stow/code
 gnome.dconf
-stow/micro/.config/micro/buffers/
-stow/micro/.config/micro/backups/
 .vscode
-stow/extensions/.local/share/gnome-shell
+
