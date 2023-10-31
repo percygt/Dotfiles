@@ -1,5 +1,6 @@
 .stfolder
 ./stow/gitconfig
 ./stow/brave
+./stow/priv
 ./stow/firefox
 gnome.dconf
