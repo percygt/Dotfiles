@@ -1,7 +1,8 @@
-url --mirrorlist="https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch"
 
 # Use graphical install
 graphical
+
+url --mirrorlist="https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch"
 
 
 # Install system packages
@@ -12,7 +13,6 @@ micro
 gvfs*
 git
 dnf-plugins-core
-
 %end
 
 %post
@@ -64,10 +64,9 @@ dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce
 dnf config-manager --set-enabled fedora-cisco-openh264
 
 #COPR
-dnf copr enable atim/starship
-dnf copr enable lukenukem:asus-linux.repo
-dnf copr enable atim:lazydocker.repo
-
+dnf -y copr enable atim/starship
+dnf -y copr enable lukenukem:asus-linux.repo
+dnf -y copr enable atim:lazydocker.repo
 
 #BTRFS
 btrfs filesystem label / FEDORA
@@ -116,6 +115,7 @@ for dir in "${SUBVOLUMES[@]}" ; do
         rm -rf "/${dir}-old"
     fi
 done
+
 
 %end
 

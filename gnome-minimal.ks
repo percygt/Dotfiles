@@ -10,7 +10,6 @@ graphical
 @fonts
 @multimedia                            # Common audio/video frameworks
 fedora-workstation-repositories        # Default Fedora repositories
-dnf-plugins-core
 gnome-console
 gnome-disk-utility
 gnome-shell
@@ -38,7 +37,7 @@ flatpak
 syncthing
 stow
 bzip2
-
+dnf-plugins-core
 plymouth-system-theme
 %end
 
