@@ -1,0 +1,61 @@
+#!/bin/bash
+
+#VSCode
+echo "Settiing VSCode repo . . ."
+cat > /etc/yum.repos.d/vscode.repo <<EOF
+[code]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+EOF
+
+#Brave
+echo "Settiing Brave repo . . ."
+cat > /etc/yum.repos.d/brave-browser.repo <<EOF
+[brave-browser]
+name=Brave Browser
+baseurl=https://brave-browser-rpm-release.s3.brave.com/\$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
+EOF
+
+#ProtonVPN
+echo "Settiing ProtonVPN repo . . ."
+cat > /etc/yum.repos.d/protonvpn.repo <<EOF
+[protonvpn-fedora-stable]
+name = ProtonVPN Fedora Stable repository
+baseurl = https://repo.protonvpn.com/fedora-\$releasever-stable
+enabled = 1
+gpgcheck = 1
+repo_gpgcheck=1
+gpgkey = https://repo.protonvpn.com/fedora-\$releasever-stable/public_key.asc
+
+[protonvpn-fedora-unstable]
+name = ProtonVPN Fedora Beta repository
+baseurl = https://repo.protonvpn.com/fedora-\$releasever-unstable
+enabled = 1
+gpgcheck = 1
+repo_gpgcheck=1
+gpgkey = https://repo.protonvpn.com/fedora-\$releasever-unstable/public_key.asc
+EOF
+
+#Docker
+echo "Settiing Docker repo . . ."
+dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+
+#fedora-cisco-openh264
+echo "Settiing Openh264 repo. . ."
+dnf config-manager --set-enabled fedora-cisco-openh264
+
+#COPR
+echo "Settiing Copr and rpmfusion repos. . ."
+dnf -y copr enable atim/starship
+dnf -y copr enable atim/lazydocker
+dnf -y copr enable lukenukem/asus-linux
+dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+
+
