@@ -7,56 +7,16 @@ graphical
 # Install system packages
 %packages
 @base-x
-@fonts
-@multimedia                            # Common audio/video frameworks
 fedora-workstation-repositories        # Default Fedora repositories
-dnf-plugins-core
-gnome-console
-gnome-disk-utility
-gnome-shell
-gnome-system-monitor
-gnome-tweaks
-gnome-user-share
-nautilus
-file-roller
-gnome-session-xsession
-NetworkManager-wifi
-xdg-user-dirs
-xdg-user-dirs-gtk
-xdg-utils
-xdg-desktop-portal-gnome
+micro
 gvfs*
 git
-bash-completion
-wget
-unzip
-micro
-inotify-tools
-firefox
-make
-flatpak
-syncthing
-stow
-bzip2
+dnf-plugins-core
 
-plymouth-system-theme
 %end
 
 %post
-# Set the plymouth theme
-plymouth-set-default-theme bgrt -R
-
-# Change Systemd boot target
-systemctl set-default graphical.target
-
-systemctl enable gdm bluetooth NetworkManager
-
 grub2-editenv - unset menu_auto_hide
-
-# Configure Flatpak
-systemctl disable flatpak-add-fedora-repos
-flatpak remote-add flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install -y flathub md.obsidian.Obsidian
 
 #VSCode
 cat > /etc/yum.repos.d/vscode.repo <<EOF
