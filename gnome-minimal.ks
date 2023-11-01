@@ -103,58 +103,9 @@ dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce
 dnf config-manager --set-enabled fedora-cisco-openh264
 
 #COPR
-dnf copr enable atim/starship
-dnf copr enable lukenukem:asus-linux.repo
-dnf copr enable atim:lazydocker.repo
-
-
-#BTRFS
-btrfs filesystem label / FEDORA
-
-ROOT_UUID="$(grub2-probe --target=fs_uuid /)"
-OPTIONS="$(grep '/home' /etc/fstab | awk '{print $4}' | cut -d, -f2-)"
-SUBVOLUMES=(
-    "opt"
-    "var/cache"
-    "var/crash"
-    "var/log"
-    "var/spool"
-    "var/tmp"
-    "var/www"
-    "var/lib/AccountsService"
-    "var/lib/gdm"
-    "home/$USER/.mozilla"
-    "home/$USER/.config/BraveSoftware"
-)
-
-for dir in "${SUBVOLUMES[@]}" ; do
-    if [[ -d "/${dir}" ]] ; then
-        mv -v "/${dir}" "/${dir}-old"
-        btrfs subvolume create "/${dir}"
-        cp -ar "/${dir}-old/." "/${dir}/"
-    else
-        btrfs subvolume create "/${dir}"
-    fi
-    restorecon -RF "/${dir}"
-    printf "%-41s %-24s %-5s %-s %-s\n" \
-        "UUID=${ROOT_UUID}" \
-        "/${dir}" \
-        "btrfs" \
-        "subvol=${dir},${OPTIONS}" \
-        "0 0" | \
-        tee -a /etc/fstab
-done
-
-chmod 1777 /var/tmp
-chmod 1770 /var/lib/gdm
-chown -R $USER: /home/$USER/.mozilla
-chown -R $USER: /home/$USER/.config/BraveSoftware
-
-for dir in "${SUBVOLUMES[@]}" ; do
-    if [[ -d "/${dir}-old" ]] ; then
-        rm -rf "/${dir}-old"
-    fi
-done
+dnf -y copr enable atim/starship
+dnf -y copr enable lukenukem/asus-linux
+dnf -y copr enable atim/lazydocker
 
 %end
 

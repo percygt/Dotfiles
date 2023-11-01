@@ -63,8 +63,8 @@ dnf config-manager --set-enabled fedora-cisco-openh264
 
 #COPR
 dnf -y copr enable atim/starship
-dnf -y copr enable lukenukem:asus-linux.repo
-dnf -y copr enable atim:lazydocker.repo
+dnf -y copr enable lukenukem/asus-linux
+dnf -y copr enable atim/lazydocker
 
 %end
 
