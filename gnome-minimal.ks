@@ -58,7 +58,7 @@ flatpak remote-add flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak install -y flathub md.obsidian.Obsidian
 
 #VSCode
-cat > /etc/yum.repos.d/vscode.repo" <<EOF
+cat > /etc/yum.repos.d/vscode.repo <<EOF
 [code]
 name=Visual Studio Code
 baseurl=https://packages.microsoft.com/yumrepos/vscode
@@ -68,7 +68,7 @@ gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 
 #Brave
-cat > /etc/yum.repos.d/brave-browser.repo" <<EOF
+cat > /etc/yum.repos.d/brave-browser.repo <<EOF
 [code]
 name=Brave Browser
 baseurl=https://brave-browser-rpm-release.s3.brave.com/$basearch
@@ -78,7 +78,7 @@ gpgkey=https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 EOF
 
 #ProtonVPN
-cat > /etc/yum.repos.d/protonvpn.repo" <<EOF
+cat > /etc/yum.repos.d/protonvpn.repo <<EOF
 [protonvpn-fedora-stable]
 name = ProtonVPN Fedora Stable repository
 baseurl = https://repo.protonvpn.com/fedora-$releasever-stable
