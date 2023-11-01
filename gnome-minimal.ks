@@ -7,55 +7,55 @@ graphical
 # Install system packages
 %packages
 @base-x
-@fonts
-@multimedia                            # Common audio/video frameworks
+#@fonts
+#@multimedia                            # Common audio/video frameworks
 fedora-workstation-repositories        # Default Fedora repositories
-gnome-console
-gnome-disk-utility
-gnome-shell
-gnome-system-monitor
-gnome-tweaks
-gnome-user-share
-nautilus
-file-roller
-gnome-session-xsession
-NetworkManager-wifi
-xdg-user-dirs
-xdg-user-dirs-gtk
-xdg-utils
-xdg-desktop-portal-gnome
+#gnome-console
+#gnome-disk-utility
+#gnome-shell
+#gnome-system-monitor
+#gnome-tweaks
+#gnome-user-share
+#nautilus
+#file-roller
+#gnome-session-xsession
+#NetworkManager-wifi
+#xdg-user-dirs
+#xdg-user-dirs-gtk
+#xdg-utils
+#xdg-desktop-portal-gnome
 gvfs*
 git
-bash-completion
-wget
-unzip
+#bash-completion
+#wget
+#unzip
 micro
-inotify-tools
-firefox
+#inotify-tools
+#firefox
 make
-flatpak
-syncthing
-stow
-bzip2
+#flatpak
+#syncthing
+#stow
+#bzip2
 dnf-plugins-core
-plymouth-system-theme
+#plymouth-system-theme
 %end
 
 %post
 # Set the plymouth theme
-plymouth-set-default-theme bgrt -R
+#plymouth-set-default-theme bgrt -R
 
 # Change Systemd boot target
-systemctl set-default graphical.target
+#systemctl set-default graphical.target
 
-systemctl enable gdm bluetooth NetworkManager
+#systemctl enable gdm bluetooth NetworkManager
 
 grub2-editenv - unset menu_auto_hide
 
 # Configure Flatpak
-systemctl disable flatpak-add-fedora-repos
-flatpak remote-add flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak install -y flathub md.obsidian.Obsidian
+#systemctl disable flatpak-add-fedora-repos
+#flatpak remote-add flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+#flatpak install -y flathub md.obsidian.Obsidian
 
 #VSCode
 cat > /etc/yum.repos.d/vscode.repo <<EOF
@@ -106,10 +106,6 @@ dnf config-manager --set-enabled fedora-cisco-openh264
 dnf copr enable atim/starship
 dnf copr enable lukenukem:asus-linux.repo
 dnf copr enable atim:lazydocker.repo
-
-#RPM Fusion
-dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
 
 #BTRFS
 btrfs filesystem label / FEDORA
