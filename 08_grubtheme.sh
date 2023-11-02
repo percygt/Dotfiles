@@ -7,7 +7,7 @@ wget -P /tmp https://github.com/shvchk/poly-dark/raw/master/install.sh
 
 bash /tmp/install.sh
 
-cp files/background.png /boot/grub2/themes/poly-dark/
+cp ./files/background.png /boot/grub2/themes/poly-dark/
 
 
 
