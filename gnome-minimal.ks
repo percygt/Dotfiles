@@ -37,6 +37,7 @@ flatpak
 syncthing
 stow
 bzip2
+tar
 dnf-plugins-core
 plymouth-system-theme
 %end
