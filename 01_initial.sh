@@ -14,7 +14,8 @@ btrfs filesystem show
 
 [ -f ./scripts/set_repo ] && source ./scripts/set_repo
 
-echo $USER
+chown $SUDO_USER -R /data
+
 dnf clean all
 dnf makecache
 dnf up

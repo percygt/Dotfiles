@@ -52,6 +52,10 @@ systemctl enable gdm bluetooth NetworkManager
 
 grub2-editenv - unset menu_auto_hide
 
+# Configure Flatpak
+systemctl disable flatpak-add-fedora-repos
+flatpak remote-add flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 cat >> /etc/dnf/dnf.conf <<EOF
 max_parallel_downloads=10
 EOF

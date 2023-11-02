@@ -60,3 +60,5 @@ for dir in "${SUBVOLUMES[@]}" ; do
         rm -rf "/${dir}-old"
     fi
 done
+
+btrfs subvolume list /

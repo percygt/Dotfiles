@@ -5,6 +5,7 @@ com.belmoussaoui.Obfuscate
 com.discordapp.Discord
 com.github.GradienceTeam.Gradience
 com.github.IsmaelMartinez.teams_for_linux
+com.github.alecaddd.sequeler
 com.github.finefindus.eyedropper
 com.github.marhkb.Pods
 com.github.muriloventuroso.pdftricks
@@ -55,6 +56,7 @@ org.gnome.font-viewer
 org.gnome.meld
 org.kde.kdenlive
 org.kde.krita
+org.keepassxc.KeePassXC
 org.libreoffice.LibreOffice
 org.upscayl.Upscayl
 org.videolan.VLC

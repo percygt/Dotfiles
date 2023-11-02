@@ -5,7 +5,7 @@ set -eu
 
 
 echo -e "Installing snapper . . .\n"
-dnf install -y snapper python3-dnf-plugin-snapper
+dnf install snapper python3-dnf-plugin-snapper -y
 
 snapper -c root create-config /
 snapper -c home create-config /home

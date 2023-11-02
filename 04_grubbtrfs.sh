@@ -41,4 +41,6 @@ SNAP_ID="$(btrfs inspect-internal rootid /.snapshots/1/snapshot)"
 
 btrfs subvolume set-default $SNAP_ID /
 
+grub2-mkconfig -o /boot/grub2/grub.cfg
+
 systemctl reboot

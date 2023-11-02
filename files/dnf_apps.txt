@@ -8,4 +8,5 @@ fastfetch
 exa
 fish
 starship
+brave-browser
 
