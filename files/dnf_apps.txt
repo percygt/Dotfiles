@@ -17,4 +17,4 @@ gnome-shell-extension-pop-shell
 gnome-shell-extension-user-theme
 gnome-shell-extension-user-theme
 kvantum
-
+keepassxc

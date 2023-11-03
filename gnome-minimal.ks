@@ -64,6 +64,8 @@ cat >> /etc/dnf/dnf.conf <<EOF
 max_parallel_downloads=10
 EOF
 
+sed -i "s/#Experimental = false/Experimental = true/" /etc/bluetooth/main.conf
+
 %end
 
 # Reboot after installation
