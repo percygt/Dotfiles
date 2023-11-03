@@ -7,10 +7,13 @@ set -eu
 sudo xargs dnf install -y < ./files/dnf_apps.txt
 sudo flatpak remote-modify --collection-id=org.flathub.Stable flathub;
 
-#Flatpaks offline install
+#Flatpak apps offline install if local repo exist
 [ -d /data/flatpak-repo ] && xargs flatpak install -y --sideload-repo=/data/flatpak-repo/.ostree/repo/ < ./files/flatpaks-offline.txt
 
-#Flatpaks online install
+#Flatpak apps online install
 xargs flatpak install -y < ./files/flatpaks.txt
 
-flatpak update
+flatpak update -y
+
+#Update flatpak local repo
+[ -d /data/flatpak-repo ] && xargs flatpak create-usb /data/flatpak-repo < flatpak-offline.txt --allow-partial
