@@ -5,9 +5,10 @@ set -eu
 
 #rpm apps install
 sudo xargs dnf install -y < ./files/dnf_apps.txt
+sudo flatpak remote-modify --collection-id=org.flathub.Stable flathub;
 
 #Flatpaks offline install
-[ -d /data/flatpak-repo ] && {sudo flatpak remote-modify --collection-id=org.flathub.Stable flathub; xargs flatpak install -y --sideload-repo=/data/flatpak-repo/.ostree/ < ./files/flatpaks-offline.txt; }
+[ -d /data/flatpak-repo ] && xargs flatpak install -y --sideload-repo=/data/flatpak-repo/.ostree/repo/ < ./files/flatpaks-offline.txt
 
 #Flatpaks online install
 xargs flatpak install -y < ./files/flatpaks.txt
