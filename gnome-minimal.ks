@@ -7,8 +7,10 @@ graphical
 # Install system packages
 %packages
 @base-x
-@fonts
+@fonts                                 # Fonts packages
 @multimedia                            # Common audio/video frameworks
+@networkmanager-submodules             # Common NetworkManager submodules
+@printing                              # Tools to enable the system to print or act as a print server
 fedora-workstation-repositories        # Default Fedora repositories
 gnome-console
 gnome-disk-utility
@@ -18,8 +20,9 @@ gnome-tweaks
 gnome-user-share
 nautilus
 file-roller
+ostree
+libappstream-glib
 gnome-session-xsession
-NetworkManager-wifi
 xdg-user-dirs
 xdg-user-dirs-gtk
 xdg-utils
