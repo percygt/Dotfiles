@@ -10,6 +10,7 @@ protonvpn-cli
 fish
 starship
 brave-browser
+bat
 xprop
 nautilus-python
 gnome-shell-extension-pop-shell
