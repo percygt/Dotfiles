@@ -16,4 +16,4 @@ xargs flatpak install -y < ./files/flatpaks.txt
 flatpak update -y
 
 #Update flatpak local repo
-[ -d /data/flatpak-repo ] && xargs flatpak create-usb /data/flatpak-repo < flatpaks-offline.txt --allow-partial
+[ -d /data/flatpak-repo ] && xargs flatpak create-usb /data/flatpak-repo < ./files/flatpaks-offline.txt --allow-partial
