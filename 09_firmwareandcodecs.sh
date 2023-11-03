@@ -3,13 +3,6 @@ set -eu
 
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;} # Need to figure out how to pkexec so we only ask for the password once.
 
-
-#firmware update
-fwupdmgr get-devices
-fwupdmgr refresh --force
-fwupdmgr get-updates
-fwupdmgr update
-
 #multimedia codecs
 dnf groupupdate 'core' 'multimedia' 'sound-and-video' --setop='install_weak_deps=False' --exclude='PackageKit-gstreamer-plugin' --allowerasing && sync -y
 dnf swap 'ffmpeg-free' 'ffmpeg' --allowerasing -y
@@ -27,3 +20,10 @@ dnf install openh264 gstreamer1-plugin-openh264 mozilla-openh264 -y
 #thumnailer
 
 dnf install ffmpegthumbnailer -y
+
+
+#firmware update
+fwupdmgr get-devices
+fwupdmgr refresh --force
+fwupdmgr get-updates
+fwupdmgr update
