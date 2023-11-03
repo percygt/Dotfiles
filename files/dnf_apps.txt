@@ -9,10 +9,12 @@ eza
 protonvpn-cli
 fish
 starship
-brave-browser
+brave-browser-1.59.124-1.x86_64
 bat
 xprop
 nautilus-python
 gnome-shell-extension-pop-shell
-
+gnome-shell-extension-user-theme
+gnome-shell-extension-user-theme
+kvantum
 
