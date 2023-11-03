@@ -5,7 +5,8 @@ godot
 foot
 micro
 fastfetch
-exa
+eza
+protonvpn-cli
 fish
 starship
 brave-browser
