@@ -12,3 +12,5 @@ sudo flatpak remote-modify --collection-id=org.flathub.Stable flathub;
 
 #Flatpaks online install
 xargs flatpak install -y < ./files/flatpaks.txt
+
+flatpak update
