@@ -4,5 +4,3 @@ set -eu
 [ "$UID" -ne 0 ] || { echo "This script must be run by $SUDO_USER."; exit 1;}
 
 dconf load / < /data/scripts_conf/gnome.dconf
-
-dconf write /org/gnome/shell/disable-extension-version-validation "true" #yolo
