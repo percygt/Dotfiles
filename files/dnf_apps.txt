@@ -6,6 +6,7 @@ foot
 micro
 fastfetch
 eza
+protonvpn
 protonvpn-cli
 fish
 starship

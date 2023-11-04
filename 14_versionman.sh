@@ -19,3 +19,6 @@ echo 'export GOROOT="$HOME/.gobrew/current/go"' >> ~/.bashrc
 #nvm
 echo -e '\n#nvm' >> ~/.bashrc
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+
+#poetry
+curl -sSL https://install.python-poetry.org | python3 -
