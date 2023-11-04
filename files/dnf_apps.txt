@@ -17,5 +17,8 @@ gnome-shell-extension-forge
 gnome-shell-extension-user-theme
 gnome-shell-extension-vertical-workspaces
 gnome-shell-extension-appindicator
+gnome-shell-extension-unite
+libgda
+libgda-sqlite
 kvantum
 keepassxc
