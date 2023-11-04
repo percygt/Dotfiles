@@ -18,3 +18,4 @@ grep "#user_configs" $HOME/.bashrc || echo -e "\n#user_configs\n[ -f $HOME/.bash
 [[ ! -e "$HOME/.local/share/gnome-shell/extensions/"  ]] && mkdir -p $HOME/.local/share/gnome-shell/extensions/
 
 cp -ar /data/extensions/. $HOME/.local/share/gnome-shell/extensions/
+cp -ar /data/cp_home/. $HOME/
