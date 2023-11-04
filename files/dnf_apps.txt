@@ -22,3 +22,5 @@ libgda
 libgda-sqlite
 kvantum
 keepassxc
+podman
+distrobox
