@@ -12,13 +12,13 @@ fish
 starship
 brave-browser-1.59.124-1.x86_64
 bat
+zip
 xprop
+gettext
 nautilus-python
 gnome-shell-extension-forge
 gnome-shell-extension-user-theme
-gnome-shell-extension-vertical-workspaces
 gnome-shell-extension-appindicator
-gnome-shell-extension-unite
 libgda
 libgda-sqlite
 kvantum
