@@ -33,4 +33,5 @@ done
 /data/utils/libadwaita-theme-changer/libadwaita-tc.py
 /data/utils/stylepak-master/stylepak install-system
 
+sed -i "s/#Experimental = false/Experimental = true/" /etc/bluetooth/main.conf
 echo "Reboot to apply changes"
