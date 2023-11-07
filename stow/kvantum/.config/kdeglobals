@@ -138,6 +138,9 @@ shadeSortColumn=true
 [KDE]
 contrast=4
 
+[KShortcutsDialog Settings]
+Dialog Size=615,480
+
 [WM]
 activeBackground=22,25,37
 activeBlend=171,171,171

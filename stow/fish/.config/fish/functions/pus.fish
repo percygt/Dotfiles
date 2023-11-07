@@ -1,4 +1,4 @@
-function pus --wraps='protonvpn-cli c --cc US' --description 'alias pus protonvpn-cli c --cc US'
-  protonvpn-cli c --cc US $argv
+function pus --wraps='sudo protonvpn c --cc US' --description 'alias pus sudo protonvpn c --cc US'
+  sudo protonvpn c --cc US $argv
         
 end

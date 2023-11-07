@@ -29,8 +29,8 @@
 }
 
 .window-tiled-border {
-  border-width: 3px;
-  border-color: rgba(236, 94, 94, 1);
+  border-width: 1px;
+  border-color: rgba(42,21,236,0.37);
   border-style: solid;
   border-radius: 14px;
 }
@@ -55,7 +55,7 @@
 }
 
 .window-stacked-border {
-  border-width: 3px;
+  border-width: 2px;
   border-color: rgba(247, 162, 43, 1);
   border-style: solid;
   border-radius: 14px;
@@ -101,18 +101,18 @@
 }
 
 .window-floated-border {
-  border-width: 3px;
-  border-color: rgba(180, 167, 214, 1);
+  border-width: 1px;
+  border-color: rgba(180,167,214,0);
   border-style: solid;
   border-radius: 14px;
 }
 
 .window-tilepreview-tiled {
   border-width: 1px;
-  border-color: rgba(236, 94, 94, 0.4);
+  border-color: rgba(42,21,236,0.3);
   border-style: solid;
   border-radius: 14px;
-  background-color: rgba(236, 94, 94, 0.3);
+  background-color: rgba(42,21,236,0.2);
 }
 
 .window-tilepreview-stacked {

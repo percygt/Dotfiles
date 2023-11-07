@@ -21,3 +21,11 @@ cp -arvi /data/extensions/. $HOME/.local/share/gnome-shell/extensions/
 
 echo "copying cphome . . ."
 cp -arvi /data/cp_home/. $HOME/
+
+
+EXT_INSTALL=($(\ls -d /data/ext_install/*))
+
+for dir in "${EXT_INSTALL[@]}" ; do
+  echo "installing ${dir}"
+  gnome-extensions install "${dir}" --force
+done
