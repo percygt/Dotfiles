@@ -16,11 +16,9 @@ grep "#aliases" $HOME/.bashrc || echo -e "\n#aliases\n[ -f $HOME/.bash_aliases ]
 grep "#user_configs" $HOME/.bashrc || echo -e "\n#user_configs\n[ -f $HOME/.bash_configs ] && source $HOME/.bash_configs" >> $HOME/.bashrc
 
 [[ ! -e "$HOME/.local/share/gnome-shell/extensions/"  ]] && mkdir -p $HOME/.local/share/gnome-shell/extensions/
-echo "copying extensions . . ."
-cp -arvi /data/extensions/. $HOME/.local/share/gnome-shell/extensions/
-
-echo "copying cphome . . ."
-cp -arvi /data/cp_home/. $HOME/
+#echo "copying extensions . . ."
+cp -Rnvp /data/extensions/* $HOME/.local/share/gnome-shell/extensions/ &&
+sync
 
 
 EXT_INSTALL=($(\ls -d /data/ext_install/*))
@@ -33,5 +31,9 @@ done
 /data/utils/libadwaita-theme-changer/libadwaita-tc.py
 /data/utils/stylepak-master/stylepak install-system
 
-sed -i "s/#Experimental = false/Experimental = true/" /etc/bluetooth/main.conf
+#echo "copying cphome . . ."
+cp -Rnvp /data/cp_home/* $HOME/ &&
+sync
+
+sudo sed -i "s/#Experimental = false/Experimental = true/" /etc/bluetooth/main.conf
 echo "Reboot to apply changes"
