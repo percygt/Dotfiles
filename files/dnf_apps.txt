@@ -32,4 +32,5 @@ docker-ce-cli
 containerd.io
 docker-buildx-plugin
 docker-compose-plugin
+https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 

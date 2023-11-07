@@ -22,29 +22,17 @@ gpgcheck=1
 gpgkey=https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 EOF
 
-#ProtonVPN
-# echo "Settiing ProtonVPN repo . . ."
-# RELEASEVER="\$releasever"
-# CURRELEASEVER="$(awk '{print $3}' /etc/fedora-release)"
-
-# wget --spider "https://repo.protonvpn.com/fedora-$CURRELEASEVER-stable/public_key.asc" 2> /dev/null || RELEASEVER=38
-# cat > /etc/yum.repos.d/protonvpn.repo <<EOF
-# [protonvpn-fedora-stable]
-# name = ProtonVPN Fedora Stable repository
-# baseurl = https://repo.protonvpn.com/fedora-$RELEASEVER-stable
-# enabled = 1
-# gpgcheck = 1
-# repo_gpgcheck=1
-# gpgkey = https://repo.protonvpn.com/fedora-$RELEASEVER-stable/public_key.asc
-
-# [protonvpn-fedora-unstable]
-# name = ProtonVPN Fedora Beta repository
-# baseurl = https://repo.protonvpn.com/fedora-$RELEASEVER-unstable
-# enabled = 1
-# gpgcheck = 1
-# repo_gpgcheck=1
-# gpgkey = https://repo.protonvpn.com/fedora-$RELEASEVER-unstable/public_key.asc
-# EOF
+#Protonvpn
+echo "Settiing Protonvpn repo . . ."
+cat > /etc/yum.repos.d/protonvpn-stable.repo <<EOF
+[protonvpn-fedora-stable]
+name = ProtonVPN Fedora Stable repository
+baseurl = https://repo.protonvpn.com/fedora-\$releasever-stable
+enabled = 1
+gpgcheck = 1
+repo_gpgcheck=1
+gpgkey = https://repo.protonvpn.com/fedora-\$releasever-stable/public_key.asc
+EOF
 
 #Docker
 echo "Settiing Docker repo . . ."
@@ -59,6 +47,7 @@ echo "Settiing Copr and rpmfusion repos. . ."
 dnf -y copr enable atim/starship
 dnf -y copr enable atim/lazydocker
 dnf -y copr enable lukenukem/asus-linux
+#RPMfusion
 dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 
