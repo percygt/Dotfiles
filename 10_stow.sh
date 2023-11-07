@@ -6,5 +6,5 @@ set -eu
 # cd stow
 stow -t $HOME -d ./stow $(ls stow)
 
-echo -e "\033[0;33mMOVE PERMANENT DATA to /data"
+echo -e "\033[0;33mPrepare /data"
 

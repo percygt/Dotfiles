@@ -1,4 +1,5 @@
 gnome-tweaks
+fish
 code
 gparted
 godot
@@ -7,9 +8,10 @@ micro
 fastfetch
 eza
 protonvpn-cli
-fish
 starship
 brave-browser-1.59.124-1.x86_64
+fzf
+fd-find
 bat
 zip
 xprop

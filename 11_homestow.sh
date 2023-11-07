@@ -33,4 +33,4 @@ done
 /data/utils/libadwaita-theme-changer/libadwaita-tc.py
 /data/utils/stylepak-master/stylepak install-system
 
-echo "reboot to apply change"
+echo "Reboot to apply changes"

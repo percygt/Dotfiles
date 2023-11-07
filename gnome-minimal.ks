@@ -6,7 +6,6 @@ graphical
 
 # Install system packages
 %packages
-@base-x
 @fonts                                 # Fonts packages
 @multimedia                            # Common audio/video frameworks
 @networkmanager-submodules             # Common NetworkManager submodules
