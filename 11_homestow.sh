@@ -29,3 +29,8 @@ for dir in "${EXT_INSTALL[@]}" ; do
   echo "installing ${dir}"
   gnome-extensions install "${dir}" --force
 done
+
+/data/utils/libadwaita-theme-changer/libadwaita-tc.py
+/data/utils/stylepak-master/stylepak install-system
+
+echo "reboot to apply change"
