@@ -16,7 +16,7 @@ grep "#aliases" $HOME/.bashrc || echo -e "\n#aliases\n[ -f $HOME/.bash_aliases ]
 grep "#user_configs" $HOME/.bashrc || echo -e "\n#user_configs\n[ -f $HOME/.bash_configs ] && source $HOME/.bash_configs" >> $HOME/.bashrc
 
 [[ ! -e "$HOME/.local/share/gnome-shell/extensions/"  ]] && mkdir -p $HOME/.local/share/gnome-shell/extensions/
-#echo "copying extensions . . ."
+echo "copying extensions . . ."
 cp -Rnvp /data/extensions/* $HOME/.local/share/gnome-shell/extensions/ &&
 sync
 
@@ -31,7 +31,7 @@ done
 /data/utils/libadwaita-theme-changer/libadwaita-tc.py
 /data/utils/stylepak-master/stylepak install-system
 
-#echo "copying cphome . . ."
+echo "copying cphome . . ."
 cp -Rnvp /data/cp_home/* $HOME/ &&
 sync
 
