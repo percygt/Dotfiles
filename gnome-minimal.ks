@@ -6,12 +6,12 @@ graphical
 
 # Install system packages
 %packages
-@fonts                                 # Fonts packages
-@multimedia                            # Common audio/video frameworks
+@fonts                                 # Fonts packages                           # Common audio/video frameworks
 @networkmanager-submodules             # Common NetworkManager submodules
 @printing                              # Tools to enable the system to print or act as a print server
+@hardware-support
 fedora-workstation-repositories        # Default Fedora repositories
-gnome-console
+gnome-terminal
 gnome-disk-utility
 gnome-shell
 gnome-system-monitor
@@ -28,6 +28,7 @@ xdg-utils
 xdg-desktop-portal-gnome
 gvfs*
 git
+foot
 bash-completion
 wget
 unzip
@@ -35,8 +36,8 @@ micro
 inotify-tools
 firefox
 make
+rsync
 flatpak
-syncthing
 stow
 bzip2
 tar
