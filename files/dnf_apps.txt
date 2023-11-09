@@ -21,8 +21,10 @@ gnome-shell-extension-pop-shell
 gnome-shell-extension-forge
 gnome-shell-extension-user-theme
 gnome-shell-extension-appindicator
+gnome-shell-extension-vertical-workspaces
 libgda
 libgda-sqlite
+rsync
 kvantum
 keepassxc
 podman
@@ -32,5 +34,6 @@ docker-ce-cli
 containerd.io
 docker-buildx-plugin
 docker-compose-plugin
+lazydocker
 https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 

@@ -56,7 +56,6 @@ org.gnome.font-viewer
 org.gnome.meld
 org.kde.kdenlive
 org.kde.krita
-org.keepassxc.KeePassXC
 org.libreoffice.LibreOffice
 org.upscayl.Upscayl
 org.videolan.VLC

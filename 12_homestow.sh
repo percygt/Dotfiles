@@ -17,8 +17,7 @@ grep "#user_configs" $HOME/.bashrc || echo -e "\n#user_configs\n[ -f $HOME/.bash
 
 [[ ! -e "$HOME/.local/share/gnome-shell/extensions/"  ]] && mkdir -p $HOME/.local/share/gnome-shell/extensions/
 echo "copying extensions . . ."
-cp -Rnvp /data/extensions/* $HOME/.local/share/gnome-shell/extensions/ &&
-sync
+rsync -arhP /data/extensions/* $HOME/.local/share/gnome-shell/extensions/ &&
 
 
 EXT_INSTALL=($(\ls -d /data/ext_install/*))
@@ -32,8 +31,7 @@ done
 /data/utils/stylepak-master/stylepak install-system
 
 echo "copying cphome . . ."
-cp -Rnvp /data/cp_home/* $HOME/ &&
-sync
+rsync -arhP /data/cp_home/* $HOME/ &&
 
 sudo sed -i "s/#Experimental = false/Experimental = true/" /etc/bluetooth/main.conf
 echo "Reboot to apply changes"
