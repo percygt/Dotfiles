@@ -7,7 +7,7 @@ set -o pipefail
 readonly DAILY_DIR="/backup/daily"
 readonly WEEKLY_DIR="/backup/weekly"
 readonly MONTHLY_DIR="/backup/monthly"
-readonly LOG_DIR="/home/percygt/Logs"
+readonly LOG_DIR="${HOME}/Logs"
 readonly LOG_CLEANUP="${LOG_DIR}/data_cleanup.log"
 
 # Ensure the log directory exists

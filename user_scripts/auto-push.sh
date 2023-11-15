@@ -1,15 +1,14 @@
 #! /bin/bash
 
-# set -o errexit
-# set -o nounset
-# set -o pipefail
+set -o errexit
+set -o nounset
+set -o pipefail
 
 readonly SOURCE_DIR=(
-    "data/shared_home/CodeBox/e-store"
-    "home/percygt/Dotfiles"
+    "CodeBox/e-store"
+    "Dotfiles"
 )
-readonly HM_DIR="/home/percygt"
-readonly LOG_DIR="/home/percygt/Logs"
+readonly LOG_DIR="${HOME}/Logs"
 readonly GIT_MESSAGE="💾"
 readonly DATETIME="$(date '+%Y-%m-%d_%H:%M:%S')"
 readonly LOG_FILE="${LOG_DIR}/git_remote_push.log"
@@ -27,9 +26,8 @@ log_message() {
 
 
 for dir in "${SOURCE_DIR[@]}" ; do
-    DIR_PATH="/${dir}"
+    DIR_PATH="${HOME}/${dir}"
     cd "$DIR_PATH"
-    git config --global --add safe.directory "${DIR_PATH}"
     log_message "Starting Git add/commit for dir: $dir"
     GIT_STATUS="$(git status --branch --porcelain)"
     git add .

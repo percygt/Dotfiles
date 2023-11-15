@@ -7,8 +7,8 @@ set -o pipefail
 readonly SOURCE_DIR="/data"
 readonly BACKUP_DIR="/backup"
 readonly DATETIME="$(date '+%Y-%m-%d_%H:%M:%S')"
-readonly LOG_DIR="/home/percygt/Logs"
-readonly EXTENSIONS_DIR="/home/percygt/.local/share/gnome-shell/extensions"
+readonly LOG_DIR="${HOME}/Logs"
+readonly EXTENSIONS_DIR="${HOME}/.local/share/gnome-shell/extensions"
 readonly EXTENSIONS_DUPE_DIR="/data/extensions"
 readonly LOG_FILE="${LOG_DIR}/data_backup.log"
 
