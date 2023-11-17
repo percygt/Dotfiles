@@ -1,14 +1,15 @@
 command_timeout=600
 
-format = '''$all $fill $os $hostname [|](blue bold) $shell [|](blue bold) $time
+format = '''[$all](bg:black)[$fill $os $hostname [|](red bg:black) $shell [|](red bg:black) $time](bg:black)
 $container$character'''
+
 
 [line_break]
 disabled = true
 
 [fill]
+style = "bg:black"
 symbol = ' '
-
 
 [nix_shell]
 disabled = true
@@ -17,33 +18,34 @@ pure_msg = '[pure shell](bold green)'
 unknown_msg = '[unknown shell](bold yellow)'
 format = 'via [☃️ $state( \($name\))](bold blue) '
 
-
 [time]
 disabled = false
 use_12hr = true
-style = "red bold"
+style = "yellow dimmed bg:black"
 format = '[$time]($style)'
-time_format = '%I:%M:%S '
+time_format = '%I:%M:%S'
 
 [hostname]
 ssh_only = false
-format = '$ssh_symbol$hostname($style)'
+style = "cyan bg:black"
+format = '[$ssh_symbol$hostname]($style)'
 disabled = false
-style = 'blue bold'
 
 [shell]
 format = '[$indicator]($style)'
 fish_indicator = 'fish'
 bash_indicator = 'bash'
-style = 'yellow bold'
+style = "bold yellow bg:black"
 disabled = false
 
 [character]
-success_symbol = '>($style)'
+success_symbol = '[>](bold green)'
+error_symbol = '[✖](bold red)'
 
 [os]
 disabled = false
-format = "$symbol($style)"
+style = "bg:black"
+format = "[$symbol]($style)"
 symbols.Fedora = "󰣛"
 symbols.Ubuntu = ""
 symbols.Arch = "󰣇"
@@ -60,37 +62,38 @@ disabled = false
 
 # Before all the version info (python, nodejs, php, etc.)
 [git_status]
-style = "white"
+style = "white bg:black"
 ahead = "⇡${count}"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
 deleted = "x"
 
 # Last param in the first line/row
-[cmd_duration]
-min_time = 1
-format = "took [$duration]($style)"
-disabled = false
+# [cmd_duration]
+# min_time = 1
+# format = "took [$duration]($style)"
+# disabled = false
 
 [python]
 symbol = ' '
 pyenv_version_name = true
-style = "blue"
+style = "blue bg:black"
 # detect_extensions = []
 
 [git_branch]
 symbol = ' '
-style = "red"
+style = "red bg:black"
 
-
-[directory.substitutions]
-"~/Documents" = "󰈙 "
-"~/Downloads" = "󱑢 "
-"~/Music" = "󰎄 "
-"~/Pictures" = "󰄀 "
-"~/VM" = "  "
-"~/Pihole"= "󰷱 "
-"~/Playground" = " "
+[directory]
+style = "bg:black"
+#[directory.substitutions]
+#"~/Documents" = "󰈙 "
+#"~/Downloads" = "󱑢 "
+#"~/Music" = "󰎄 "
+#"~/Pictures" = "󰄀 "
+#"~/VM" = "  "
+#"~/Pihole"= "󰷱 "
+#"~/Playground" = " "
 
 [container]
 symbol = "󰮄 "
