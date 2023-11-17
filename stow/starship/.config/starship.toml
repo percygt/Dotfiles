@@ -1,6 +1,6 @@
 command_timeout=600
 
-format = '''[$all](bg:black)[$fill $os $hostname [|](red bg:black) $shell [|](red bg:black) $time](bg:black)
+format = '''$all$fill$os $hostname [|](red) $shell [|](red) $time
 $container$character'''
 
 
@@ -8,7 +8,6 @@ $container$character'''
 disabled = true
 
 [fill]
-style = "bg:black"
 symbol = ' '
 
 [nix_shell]
@@ -21,13 +20,13 @@ format = 'via [☃️ $state( \($name\))](bold blue) '
 [time]
 disabled = false
 use_12hr = true
-style = "yellow dimmed bg:black"
+style = "yellow dimmed"
 format = '[$time]($style)'
 time_format = '%I:%M:%S'
 
 [hostname]
 ssh_only = false
-style = "cyan bg:black"
+style = "white"
 format = '[$ssh_symbol$hostname]($style)'
 disabled = false
 
@@ -35,7 +34,7 @@ disabled = false
 format = '[$indicator]($style)'
 fish_indicator = 'fish'
 bash_indicator = 'bash'
-style = "bold yellow bg:black"
+style = "yellow"
 disabled = false
 
 [character]
@@ -44,7 +43,6 @@ error_symbol = '[✖](bold red)'
 
 [os]
 disabled = false
-style = "bg:black"
 format = "[$symbol]($style)"
 symbols.Fedora = "󰣛"
 symbols.Ubuntu = ""
@@ -69,10 +67,10 @@ behind = "⇣${count}"
 deleted = "x"
 
 # Last param in the first line/row
-# [cmd_duration]
-# min_time = 1
-# format = "took [$duration]($style)"
-# disabled = false
+[cmd_duration]
+min_time = 1
+format = "took [$duration]($style)"
+disabled = false
 
 [python]
 symbol = ' '
@@ -82,10 +80,8 @@ style = "blue bg:black"
 
 [git_branch]
 symbol = ' '
-style = "red bg:black"
+style = "red"
 
-[directory]
-style = "bg:black"
 #[directory.substitutions]
 #"~/Documents" = "󰈙 "
 #"~/Downloads" = "󱑢 "
