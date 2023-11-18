@@ -5,10 +5,6 @@
             "mode": "float"
         },
         {
-            "wmClass": "Com.github.amezin.ddterm",
-            "mode": "float"
-        },
-        {
             "wmClass": "Com.github.donadigo.eddy",
             "mode": "float"
         },
@@ -43,6 +39,27 @@
         {
             "wmClass": "Alacritty",
             "mode": "float"
+        },
+        {
+            "wmClass": "org.wezfurlong.wezterm",
+            "mode": "float"
+        },
+        {
+            "wmClass": "KeePassXC",
+            "mode": "float"
+        },
+        {
+            "wmClass": "brave-jckaldkomadaenmmgladeopgmfbahfjm-Profile_2",
+            "mode": "float"
+        },
+        {
+            "wmClass": "FFPWA-01HEVASY5HFEXAPXP90CW7T3B5",
+            "mode": "float"
+        },
+        {
+            "wmClass": "protonvpn-app",
+            "mode": "float"
         }
+        
     ]
 }
