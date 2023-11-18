@@ -109,6 +109,9 @@
     },
     {
       "class": "FFPWA-01HEVASY5HFEXAPXP90CW7T3B5"
+    },
+    {
+      "class": "org.wezfurlong.wezterm"
     }
   ],
   "skiptaskbarhidden": [],
