@@ -59,6 +59,11 @@
         {
             "wmClass": "protonvpn-app",
             "mode": "float"
+        },
+        {
+            "wmClass": "com.mattjakeman.ExtensionManager",
+            "wmTitle": "Extension Manager",
+            "mode": "float"
         }
     ]
 }
