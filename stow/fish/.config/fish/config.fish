@@ -11,7 +11,6 @@ enable_transience
 
 pyenv init - | source
 
-set fzf_preview_file_cmd preview
 set fzf_configure_bindings --variables=\e\cv
 set fzf_fd_opts --hidden --exclude=.git
 set fzf_directory_opts --bind "ctrl-e:execute($EDITOR {} &> /dev/tty)" --bind "ctrl-t:execute(code {} &> /dev/tty)"
