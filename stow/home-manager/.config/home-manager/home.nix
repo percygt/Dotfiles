@@ -20,6 +20,8 @@
   home.packages = with pkgs;  [
     htop
     timg
+    lazydocker
+    protonvpn-cli
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
