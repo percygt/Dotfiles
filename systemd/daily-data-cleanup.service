@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=oneshot
 User=percygt
-ExecStart=/bin/bash /home/percygt/.local/bin/cleanup_data.sh
+ExecStart=sh /home/percygt/.local/bin/cleanup_data.sh
 Environment=HOME=/home/percygt
 
 [Install]

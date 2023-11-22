@@ -1,7 +1,6 @@
 #! /bin/bash
 
-set -o errexit
-set -o nounset
+set -eu
 set -o pipefail
 
 readonly SOURCE_DIR="/data"
