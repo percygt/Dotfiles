@@ -4,10 +4,20 @@ set -eu
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;}
 
 sed -i 's/zstd:1/lzo/g' /etc/fstab
+OPTIONS="compress=lzo"
+DATA=$(lsblk -f | awk '/DATA/{print $4}')
+BACKUP=$(lsblk -f | awk '/BACKUP/{print $4}')
+WINDOWS=$(lsblk -f | awk '/WINDOWS/{print $4}')
 
-COMMON=lsblk -f | awk '/COMMON/{print $4}'
-BACKUP=lsblk -f | awk '/BACKUP/{print $4}'
-WINDOWS=lsblk -f | awk '/WINDOWS/{print $4}'
+
+printf "%-41s %-24s %-5s %-s %-s\n" \
+    "UUID=${DATA}" \
+    "/data" \
+    "btrfs" \
+    ${OPTIONS}" \
+    "0 0" | \
+    tee -a /etc/fstab
+
 
 echo -e "Unsetting grub menu auto hide . . .\n"
 grub2-editenv - unset menu_auto_hide
