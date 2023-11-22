@@ -24,7 +24,7 @@ SUBVOLUMES=(
 )
 
 for dir in "${SUBVOLUMES[@]}" ; do
-    printf "%-41s %-24s %-5s %-s %-s\n" \
+    printf "%-41s %-35s %-5s %-s %-s\n" \
         "UUID=${ROOT_UUID}" \
         "/${dir}" \
         "btrfs" \

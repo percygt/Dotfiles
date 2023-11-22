@@ -1,0 +1,12 @@
+[Unit]
+Description=Cleanup Service
+After=network.target
+
+[Service]
+Type=oneshot
+User=percygt
+ExecStart=/bin/bash /home/percygt/.local/bin/cleanup_data.sh
+Environment=HOME=/home/percygt
+
+[Install]
+WantedBy=multi-user.target

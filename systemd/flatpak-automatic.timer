@@ -1,0 +1,11 @@
+[Unit]
+Description=flatpak Automatic Update Trigger
+Documentation=man:flatpak(1)
+
+[Timer]
+OnCalendar=0/7:00:00
+RandomizedDelaySec=60m
+Persistent=true
+
+[Install]
+WantedBy=timers.target

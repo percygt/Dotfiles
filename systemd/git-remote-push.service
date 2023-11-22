@@ -1,0 +1,13 @@
+[Unit]
+Description=Git Remote Push Service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=percygt
+ExecStart=/bin/bash /home/percygt/.local/bin/auto-push.sh
+Environment=HOME=/home/percygt SSH_CONFIG_FILE=/home/percygt/.ssh/id_rsa
+
+[Install]
+WantedBy=multi-user.target

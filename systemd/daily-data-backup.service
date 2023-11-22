@@ -1,0 +1,12 @@
+[Unit]
+Description=Backup Service
+
+
+[Service]
+Type=oneshot
+User=percygt
+ExecStart=/bin/bash /home/percygt/.local/bin/backup_data.sh
+Environment=HOME=/home/percygt 
+
+[Install]
+WantedBy=multi-user.target

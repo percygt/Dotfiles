@@ -3,7 +3,7 @@ set -eu
 
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;}
 
-sed -i 's/zstd:1/lzo/g' /etc/fstab
+
 
 #### Get the UUID of your btrfs system root.
 ROOT_UUID="$(grub2-probe --target=fs_uuid /)"
@@ -39,7 +39,7 @@ for dir in "${SUBVOLUMES[@]}" ; do
         btrfs subvolume create "/${dir}"
     fi
     restorecon -RF "/${dir}"
-    printf "%-41s %-24s %-5s %-s %-s\n" \
+    printf "%-41s %-35s %-5s %-s %-s\n" \
         "UUID=${ROOT_UUID}" \
         "/${dir}" \
         "btrfs" \
