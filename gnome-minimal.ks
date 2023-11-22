@@ -21,7 +21,6 @@ nautilus
 file-roller
 ostree
 libappstream-glib
-gnome-session-xsession
 xdg-user-dirs
 xdg-user-dirs-gtk
 xdg-utils
@@ -40,6 +39,7 @@ rsync
 flatpak
 stow
 bzip2
+zip
 tar
 dnf-plugins-core
 plymouth-system-theme

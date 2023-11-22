@@ -16,7 +16,7 @@ snapper -c root set-config ALLOW_USERS=$SUDO_USER SYNC_ACL=yes
 snapper -c home set-config ALLOW_USERS=$SUDO_USER SYNC_ACL=yes
 
 ROOT_UUID="$(grub2-probe --target=fs_uuid /)"
-OPTIONS="$(grep '/home' /etc/fstab | awk '{print $4}' | cut -d, -f2-)"
+OPTIONS="compress=lzo"
 
 SUBVOLUMES=(
     ".snapshots"

@@ -9,12 +9,13 @@ sed -i 's/zstd:1/lzo/g' /etc/fstab
 ROOT_UUID="$(grub2-probe --target=fs_uuid /)"
 
 #### Get the btrfs subvolume mount options from your fstab.
-OPTIONS="$(grep '/home' /etc/fstab | awk '{print $4}' | cut -d, -f2-)"
+OPTIONS="compress=lzo"
 
 #### Declare rest of the subvolumes you want to create in the array.
 #### Copy from 'SUBVOLUMES' to ')', paste it in terminal, and hit <Enter>.
 SUBVOLUMES=(
     "opt"
+    "nix"
     "var/cache"
     "var/crash"
     "var/log"
