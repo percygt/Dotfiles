@@ -15,22 +15,22 @@ fstab_write() {
     local uuid=$1
     local dir=$2
     local fs=$3
+    local na=$([[ $4 == 1 ]] && echo ",noatime")
     printf "%-41s %-35s %-5s %-s %-s\n" \
         "UUID=${uuid}" \
         "/${dir}" \
         "${fs}"  \
-        "${OPTIONS}" \
+        "${OPTIONS}${na}" \
         "0 0" | \
         tee -a /etc/fstab
 }
 
-fstab_write $DATA "data" "btrfs"
-fstab_write $BACKUP "backup" "btrfs"
-fstab_write $WINDOWS "windows" "auto"
+fstab_write $DATA "data" "btrfs" 0
+fstab_write $BACKUP "backup" "btrfs" 1
+fstab_write $WINDOWS "windows" "auto" 1
 
 systemctl daemon-reload
 mount -va
-
 
 echo -e "Unsetting grub menu auto hide . . .\n"
 grub2-editenv - unset menu_auto_hide

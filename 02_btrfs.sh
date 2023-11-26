@@ -11,6 +11,7 @@ ROOT_UUID="$(grub2-probe --target=fs_uuid /)"
 #### Get the btrfs subvolume mount options from your fstab.
 OPTIONS="compress=lzo"
 
+#mkdir -vp /var/lib/libvirt
 #### Declare rest of the subvolumes you want to create in the array.
 #### Copy from 'SUBVOLUMES' to ')', paste it in terminal, and hit <Enter>.
 SUBVOLUMES=(
@@ -18,14 +19,13 @@ SUBVOLUMES=(
     "nix"
     "var/cache"
     "var/crash"
+    "var/tmp"
     "var/log"
     "var/spool"
-    "var/tmp"
     "var/www"
     "var/lib/AccountsService"
+    "var/lib/libvirt/images"
     "var/lib/gdm"
-    "home/$SUDO_USER/.mozilla"
-    "home/$SUDO_USER/.config/BraveSoftware"
 )
 
 #### Run the for loop to create the subvolumes.
@@ -50,8 +50,6 @@ done
 
 chmod 1777 /var/tmp
 chmod 1770 /var/lib/gdm
-chown -R $SUDO_USER: /home/$SUDO_USER/.mozilla
-chown -R $SUDO_USER: /home/$SUDO_USER/.config/BraveSoftware
 
 systemctl daemon-reload
 mount -va

@@ -3,9 +3,11 @@
 set -eu
 set -o pipefail
 
+
+readonly DATA_DIR=/data
 readonly SOURCE_DIR=(
     "CodeBox/e-store"
-    "Dotfiles"
+    "data/dotfiles"
 )
 readonly LOG_DIR="${HOME}/Logs"
 readonly GIT_MESSAGE="💾"

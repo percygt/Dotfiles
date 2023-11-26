@@ -21,6 +21,7 @@
     htop
     timg
     lazydocker
+    lazygit
     protonvpn-cli
   ];
 
