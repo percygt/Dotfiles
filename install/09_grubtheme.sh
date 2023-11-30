@@ -9,6 +9,4 @@ bash /tmp/install.sh
 
 cp ./files/background.png /boot/grub2/themes/poly-dark/
 
-
-
 cat /etc/default/grub
