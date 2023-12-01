@@ -6,13 +6,13 @@ set -o pipefail
 
 readonly DATA_DIR=/data
 readonly SOURCE_DIR=(
-    "CodeBox/e-store"
+    "data/codebox/gitlab.com/e-store"
     "data/dotfiles"
 )
-readonly LOG_DIR="${HOME}/Logs"
+readonly LOG_DIR="/data/logs"
 readonly GIT_MESSAGE="💾"
 readonly DATETIME="$(date '+%Y-%m-%d_%H:%M:%S')"
-readonly LOG_FILE="${LOG_DIR}/git_remote_push.log"
+readonly LOG_FILE="${LOG_DIR}/git-remote-push.log"
 
 # Ensure the log directory exists
 mkdir -p "$LOG_DIR"

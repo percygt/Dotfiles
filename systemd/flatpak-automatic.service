@@ -1,13 +1,12 @@
 [Unit]
-Description=flatpak Automatic Update
+Description=Flatpak Automatic Update Service
 Documentation=man:flatpak(1)
 Wants=network-online.target
 After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/flatpak update -y
-Environment=HOME=/home/percygt
+ExecStart=sh /home/percygt/.local/bin/flatpak-automatic.sh
 
 [Install]
 WantedBy=multi-user.target

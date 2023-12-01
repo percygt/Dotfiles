@@ -3,6 +3,22 @@
 set -eu
 set -o pipefail
 
+readonly LOG_DIR="/data/logs"
+readonly LOG_FILE="${LOG_DIR}/flatpak-automatic.log"
+
+# Ensure the log directory exists
+mkdir -p "$LOG_DIR"
+
+# Function to log messages
+log_message() {
+  local timestamp
+  timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+  echo "[$timestamp] $1" >> "$LOG_FILE"
+  echo "[$timestamp] $1"
+}
+
+log_message "Starting flatpak update"
+
 #Update flatpak
 /usr/bin/flatpak update -y
 
@@ -69,4 +85,6 @@ FLATPAKS=(
   rest.insomnia.Insomnia
 )
 #Update flatpak local repo
-[ -d /data/flatpak-repo ] && flatpak create-usb /data/flatpak-repo "${FLATPAKS[@]}" --allow-partial
+[ -d /data/flatpak-repo ] && flatpak create-usb /data/flatpak-repo "${FLATPAKS[@]}" --allow-partial >> "$LOG_FILE" 2>&1
+
+log_message "Flatpak update completed"

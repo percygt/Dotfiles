@@ -1,9 +1,9 @@
 [Unit]
-Description=flatpak Automatic Update Trigger
+Description=Flatpak Automatic Update Timer
 Documentation=man:flatpak(1)
 
 [Timer]
-OnCalendar=0/7:00:00
+OnUnitActiveSec=1d
 RandomizedDelaySec=60m
 Persistent=true
 

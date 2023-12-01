@@ -21,23 +21,20 @@ if ! command -v yq &> /dev/null; then
     exit 1
 fi
 
-# Read YAML using yq
 config="/data/rsync_home/config.yaml"
-
 # Read YAML using yq
-root_dir1=$(yq -r '.root_dir1' $config)
-root_dir2=$(yq -r '.root_dir2' $config)
+root_data_dir=$(yq -r '.root_data_dir' $config)
+root_home_dir=$(yq -r '.root_home_dir' $config)
 
 # Loop through items and perform rsync
 items=$(yq -c '.items[]' $config)
 while IFS= read -r items; do
-    dir1=$(echo "$items" | yq -r '.dir1')
-    dir2=$(echo "$items" | yq -r '.dir2')
+    data_dir=$(echo "$items" | yq -r '.data_dir')
+    home_dir=$(echo "$items" | yq -r '.home_dir')
 
     # Run rsync command
-    rsync -v --ignore-existing "$root_dir1/$dir1/" "$root_dir2/$dir2/"
+    rsync -av --ignore-existing "$root_data_dir/$data_dir/" "$root_home_dir/$home_dir/"
 done <<< "$items"
-
 
 ##-----------------------------------------------------------------------------------------------------
 EXT_INSTALL=($(\ls -d /data/ext_install/*))

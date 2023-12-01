@@ -2,9 +2,8 @@
 Description=Git Remote Push Timer
 
 [Timer]
-OnBootSec=15min
 OnUnitActiveSec=4h
-RandomizedDelaySec=60m
+RandomizedDelaySec=120m
 Persistent=true
 
 [Install]

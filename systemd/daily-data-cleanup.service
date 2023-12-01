@@ -1,11 +1,11 @@
 [Unit]
-Description=Cleanup Service
+Description=Daily Data Cleanup Service
 After=network.target
 
 [Service]
 Type=oneshot
 User=percygt
-ExecStart=sh /home/percygt/.local/bin/cleanup_data.sh
+ExecStart=sh /home/percygt/.local/bin/daily-data-cleanup.sh
 Environment=HOME=/home/percygt
 
 [Install]

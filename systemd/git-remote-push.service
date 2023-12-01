@@ -6,8 +6,8 @@ After=network-online.target
 [Service]
 Type=oneshot
 User=percygt
-ExecStart=/bin/bash /home/percygt/.local/bin/auto-push.sh
-Environment=HOME=/home/percygt SSH_CONFIG_FILE=/home/percygt/.ssh/id_rsa
+ExecStart=/bin/bash /home/percygt/.local/bin/git-remote-push.sh
+Environment=HOME=/home/percygt SSH_CONFIG_FILE=/home/percygt/.ssh/id_ed25519
 
 [Install]
 WantedBy=multi-user.target

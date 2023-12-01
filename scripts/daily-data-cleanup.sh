@@ -6,8 +6,8 @@ set -o pipefail
 readonly DAILY_DIR="/backup/daily"
 readonly WEEKLY_DIR="/backup/weekly"
 readonly MONTHLY_DIR="/backup/monthly"
-readonly LOG_DIR="${HOME}/Logs"
-readonly LOG_CLEANUP="${LOG_DIR}/data_cleanup.log"
+readonly LOG_DIR="/data/logs"
+readonly LOG_FILE="${LOG_DIR}/daily-data-cleanup.log"
 
 # Ensure the log directory exists
 mkdir -p "$LOG_DIR"
@@ -16,7 +16,7 @@ mkdir -p "$LOG_DIR"
 log_message() {
   local timestamp
   timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-  echo "[$timestamp] $1" >> "$LOG_CLEANUP"
+  echo "[$timestamp] $1" >> "$LOG_FILE"
   echo "[$timestamp] $1"
 }
 
@@ -24,7 +24,7 @@ log_message() {
 log_message "Starting daily cleanup"
 
 # Remove daily backups older than a certain period (e.g., 7 days)
-find "$DAILY_DIR"/* -maxdepth 0 -type d -mtime +7 -exec rm -rf {} \; >> "$LOG_CLEANUP" 2>&1
+find "$DAILY_DIR"/* -maxdepth 0 -type d -mtime +7 -exec rm -rf {} \; >> "$LOG_FILE" 2>&1
 
 # Log completion of cleanup
 log_message "Daily cleanup completed"
@@ -35,7 +35,7 @@ if [ "$(date '+%u')" -eq 7 ]; then
   log_message "Starting weekly cleanup"
 
   # Remove weekly backups older than a certain period (e.g., 4 weeks)
-  find "$WEEKLY_DIR"/* -maxdepth 0 -type d -mtime +28 -exec rm -rf {} \; >> "$LOG_CLEANUP" 2>&1
+  find "$WEEKLY_DIR"/* -maxdepth 0 -type d -mtime +28 -exec rm -rf {} \; >> "$LOG_FILE" 2>&1
 
   # Log completion of cleanup
   log_message "Weekly cleanup completed"
@@ -47,7 +47,7 @@ if [ "$(date '+%d')" -eq 1 ]; then
   log_message "Starting monthly cleanup"
 
   # Remove monthly backups older than a certain period (e.g., 6 months)
-  find "$MONTHLY_DIR"/* -maxdepth 0 -type d -mtime +180 -exec rm -rf {} \; >> "$LOG_CLEANUP" 2>&1
+  find "$MONTHLY_DIR"/* -maxdepth 0 -type d -mtime +180 -exec rm -rf {} \; >> "$LOG_FILE" 2>&1
 
   # Log completion of cleanup
   log_message "Monthly cleanup completed"

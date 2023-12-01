@@ -1,9 +1,9 @@
 [Unit]
-Description=Daily Cleanup Timer
+Description=Daily Data Cleanup Timer
 
 [Timer]
-OnCalendar=*-*-* 06:00:00
-RandomizedDelaySec=120m
+OnUnitActiveSec=1d
+RandomizedDelaySec=30m
 Persistent=true
 
 [Install]
