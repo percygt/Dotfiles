@@ -25,9 +25,9 @@ fstab_write() {
         tee -a /etc/fstab
 }
 
-fstab_write $DATA "data" "btrfs" 0
-fstab_write $BACKUP "backup" "btrfs" 1
-fstab_write $WINDOWS "windows" "auto" 1
+fstab_write "$DATA" "data" "btrfs" 0
+fstab_write "$BACKUP" "backup" "btrfs" 1
+fstab_write "$WINDOWS" "windows" "auto" 1
 
 systemctl daemon-reload
 mount -va
@@ -57,9 +57,9 @@ dnf -y copr enable lukenukem/asus-linux
 dnf -y copr enable wezfurlong/wezterm-nightly
 
 #RPMfusion
-dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(rpm -E %fedora)".noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-"$(rpm -E %fedora)".noarch.rpm
 
-chown $SUDO_USER -R /data
+chown "$SUDO_USER" -R /data
 
 dnf clean all
 dnf makecache

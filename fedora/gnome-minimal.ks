@@ -27,7 +27,6 @@ xdg-utils
 xdg-desktop-portal-gnome
 gvfs*
 git
-foot
 bash-completion
 wget
 unzip
@@ -39,8 +38,6 @@ rsync
 flatpak
 stow
 bzip2
-zip
-tar
 dnf-plugins-core
 plymouth-system-theme
 %end

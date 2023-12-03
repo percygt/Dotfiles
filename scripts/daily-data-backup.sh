@@ -58,7 +58,7 @@ while IFS= read -r items; do
     echo "from $home_dir to $data_dir"
     # Run rsync command
     rsync -av --delete \
-    --exclude-from=<(find $root_data_dir/$data_dir -type l -exec sh -c 'readlink -f "$0" | grep -q "/nix" && echo "$0"' {} \;) \
+    --exclude-from=<(find "$root_data_dir"/"$data_dir" -type l -exec sh -c 'readlink -f "$0" | grep -q "/nix" && echo "$0"' {} \;) \
     "$root_home_dir/$home_dir/" "$root_data_dir/$data_dir/"
 
 done <<< "$items"

@@ -1,8 +1,6 @@
 gnome-tweaks
-fish
-code
 gparted
-godot
+code
 brave-browser
 xprop
 gettext
@@ -26,5 +24,6 @@ containerd.io
 docker-buildx-plugin
 docker-compose-plugin
 blueman-nautilus
+neovim
 https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 

@@ -12,8 +12,8 @@ snapper -c home create-config /home
 
 snapper list-configs
 
-snapper -c root set-config ALLOW_USERS=$SUDO_USER SYNC_ACL=yes
-snapper -c home set-config ALLOW_USERS=$SUDO_USER SYNC_ACL=yes
+snapper -c root set-config ALLOW_USERS="$SUDO_USER" SYNC_ACL=yes
+snapper -c home set-config ALLOW_USERS="$SUDO_USER" SYNC_ACL=yes
 
 ROOT_UUID="$(grub2-probe --target=fs_uuid /)"
 OPTIONS="compress=lzo"
