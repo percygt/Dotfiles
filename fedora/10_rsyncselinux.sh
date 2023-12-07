@@ -4,7 +4,13 @@ set -eu
 [ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;}
 
 setenforce 0
-semodule -i ./files/roaima-rsync-custom-1.pp
+## https://linux.die.net/man/8/rsync_selinux
+setsebool -P rsync_export_all_ro 1
+setsebool -P allow_rsync_anon_write 1
+checkmodule -M -m -o /tmp/rsync-pipe.mod ./files/rsync-pipe.te
+semodule_package -o /tmp/rsync-pipe.pp -m /tmp/rsync-pipe.mod
+semodule -i /tmp/rsync-pipe.pp
+
 setenforce 1
 
 ## https://unix.stackexchange.com/questions/534131/rsync-daemon-with-enforcing-selinux-policy-rsync-export-all-ro-still-prevents-ac

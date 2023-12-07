@@ -1,0 +1,11 @@
+
+module rsync-pipe 1.0;
+
+require {
+	type initrc_t;
+	type rsync_t;
+	class fifo_file open;
+}
+
+#============= rsync_t ==============
+allow rsync_t initrc_t:fifo_file open;

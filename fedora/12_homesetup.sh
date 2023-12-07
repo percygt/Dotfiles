@@ -6,11 +6,11 @@ set -eu
 FOLDERS=($(\ls -d /data/stow_home/* | awk -F/ '{print $4}'| tr '\n' ' '))
 
 for dir in "${FOLDERS[@]}" ; do
-  [[ -e "$HOME/${dir}"  ]] && [[ ! -L "$HOME/${dir}" ]] && rm -rf "$HOME/${dir}"
+  [[ -e "$HOME/${dir}"  ]] && [[ ! -L "$HOME/${dir}" ]] && rm -rf "$HOME/${dir:?}"
 done
 
 echo "starting stow. . ."
-stow -d /data/ -t $HOME stow_home/
+stow -d /data/ -t "$HOME" stow_home/
 
 ##---------------------------------------------------------------------------------------------------------------------
 
