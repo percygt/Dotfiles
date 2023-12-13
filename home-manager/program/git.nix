@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   email = "percygt.dev@gmail.com";
   name = "Percy Timon";
   github_repo = "https://github.com/percygt/";
@@ -14,7 +10,8 @@ in {
   ];
   programs.git = {
     enable = true;
-    delta.enable = true;
+    userEmail = email;
+    userName = name;
     extraConfig = {
       init = {
         defaultBranch = "main";
@@ -32,8 +29,26 @@ in {
         };
       };
     };
-    userEmail = email;
-    userName = name;
+    aliases = {
+      s = "status";
+      co = "checkout";
+      d = "diff";
+      c = "commit";
+      p = "pull";
+      P = "push";
+      b = "branch";
+    };
+    lfs = {enable = true;};
+    diff-so-fancy = {
+      enable = true;
+    };
+    delta = {
+      enable = false;
+      options = {
+        line-numbers = true;
+        navigate = true;
+      };
+    };
     ignores = [
       "*~"
       "*.DS_Store"
@@ -41,14 +56,15 @@ in {
       "*result*"
       ".direnv"
       "node_modules"
-      "**/__pycache__/"
+      "**__pycache__**"
+      "logs"
       "*.env"
-      "venv/"
-      ".vscode/"
+      "venv"
+      ".vscode"
     ];
-    signing = {
-      key = "${config.home.homeDirectory}/.ssh/id_ed25519";
-      signByDefault = true;
-    };
+    #signing = {
+    #  key = "${config.home.homeDirectory}/.ssh/id_ed25519";
+    #  signByDefault = true;
+    #};
   };
 }
