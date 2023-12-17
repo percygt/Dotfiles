@@ -1,0 +1,15 @@
+[com/github/repsac-by/quake-mode]
+quake-mode-always-on-top=false
+quake-mode-focusout=false
+quake-mode-gap=0
+quake-mode-height=100
+quake-mode-hide-from-overview=true
+quake-mode-monitor=1
+quake-mode-tray=false
+quake-mode-width=100
+
+[com/github/repsac-by/quake-mode/accelerators]
+quake-mode-accelerator-1=['<Alt><Super>f']
+
+[com/github/repsac-by/quake-mode/apps]
+app-1='org.wezfurlong.wezterm.desktop'
