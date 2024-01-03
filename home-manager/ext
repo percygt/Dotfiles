@@ -1,0 +1,13 @@
+[quake-mode]
+quake-mode-always-on-top=true
+quake-mode-animation-time=0.19999999999999996
+quake-mode-gap=0
+quake-mode-height=100
+quake-mode-hide-from-overview=true
+quake-mode-width=100
+
+[quake-mode/accelerators]
+quake-mode-accelerator-1=['<Super>w']
+
+[quake-mode/apps]
+app-1='gnome-info-overview-panel.desktop'
